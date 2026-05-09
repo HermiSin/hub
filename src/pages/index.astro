@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const LISTMONK_FORM = 'https://listmonk.app.fuenfgroschenverlag.com/subscription/form?l=e972efa8-c6f1-4465-b7c6-84ece63b83ea';
+
+const PENS = [
+  {
+    name: 'Aron Falkenthal',
+    werk: 'Die Salzkönige',
+    pitch: 'Polit-Fantasy aus Asthrien — wo Salz mehr wert ist als Gold.',
+    url: 'https://aronfalkenthal.com',
+  },
+  {
+    name: 'Jan Corven',
+    werk: 'Hier reden die Toten lauter',
+    pitch: 'Historisch-regionaler Crime-Noir aus deutschen Städten.',
+    url: 'https://jankorven.com',
+  },
+  {
+    name: 'H. Sinther',
+    werk: 'Soulmates',
+    pitch: 'MM Romance über Seelen, die sich über Wiedergeburten finden.',
+    url: 'https://hsinther.com',
+  },
+  {
+    name: 'Adrián María Soto',
+    werk: 'Soulmates · es',
+    pitch: 'MM Romance auf Spanisch — die internationale Stimme.',
+    url: 'https://adrianmariasoto.com',
+  },
+  {
+    name: 'Sebastian Frey',
+    werk: 'Dein mentales Update',
+    pitch: 'Mental Health und sanfte Selbstfürsorge.',
+    url: 'https://dein-mentales-update.com',
+  },
+  {
+    name: 'Konrad Stein',
+    werk: 'Was übrig bleibt',
+    pitch: 'Stoische Lebenskunst für ein digitales Zeitalter.',
+    url: 'https://konradstein.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Mathias Kron',
+    werk: 'Die Maske der Normalität',
+    pitch: 'Psycho-Thriller, die unter der Oberfläche brennen.',
+    url: 'https://mathiaskron.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Raphael Kessler',
+    werk: 'Akten, die nie freigegeben wurden',
+    pitch: 'Conspiracy-Thriller mit echtem Aktengeruch.',
+    url: 'https://raphaelkessler.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Jaro Lindt',
+    werk: 'Der Sommer, der zählt',
+    pitch: 'Coming-of-Age und Folk-Horror — der Sommer, der alles veränderte.',
+    url: 'https://jarolindt.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Elias Morn',
+    werk: 'Die stillen Häuser',
+    pitch: 'Wo Wände Geschichten erzählen, die niemand hören wollte.',
+    url: 'https://eliasmorn.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Kai Verthen',
+    werk: 'Funkstille',
+    pitch: 'Wenn die Frequenzen schweigen, hört jemand trotzdem zu.',
+    url: 'https://kaiverthen.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Tor der Welten',
+    werk: 'Imprint',
+    pitch: 'Tore in Welten, die es nicht geben sollte.',
+    url: 'https://torderwelten.de',
+  },
+];
+
+const MAGAZIN = {
+  name: 'Fünf Groschen Verlag · Legendenreich',
+  pitch: 'Das exklusive Verlags-Magazin — Geschichten hinter den Geschichten, Welt-Bibel-Tiefen, Cross-Pen-Andeutungen, Audio-Lesungen.',
+  url: 'https://legendenreich.com',
+};
+---
+<BaseLayout>
+  <header class="hero">
+    <div class="fade-in">
+      <p class="eyebrow">Fünfgroschenverlag</p>
+      <h1>Ein Verlag.<br />Viele Welten.</h1>
+      <p class="tagline">
+        Zwölf Pen-Names. Eine Pipeline. Geschichten, die Spiegel sind —<br />
+        nicht Produkte.
+      </p>
+      <img
+        class="hero-sigill"
+        src="https://images.app.fuenfgroschenverlag.com/pen-vitrinen/fgv-logo.png"
+        alt="Fünfgroschenverlag — Sigill"
+        width="160"
+        height="160"
+        loading="eager"
+        decoding="async"
+      />
+      <span class="ornament" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="fade-in">
+      <p class="eyebrow">Wer wir sind</p>
+      <h2>Ein Schreibtisch. Ein Verleger. Zwölf Stimmen.</h2>
+      <p>
+        Mein Name ist H. Sinther, und Fünfgroschenverlag ist mein Versuch,
+        Geschichten zu verlegen, die Spiegel sind und keine Produkte. Manche
+        schreibe ich selbst, viele entstehen unter anderen Namen — zwölf
+        Pen-Names mittlerweile, jeder mit einer eigenen Welt, einem eigenen Ton,
+        einer eigenen Disziplin.
+      </p>
+      <p>
+        Geschichten sind die menschliche Ausdrucksform über das, was jemanden
+        wirklich bewegt. Das Leben ist bittersüß — und unsere Hefte sind es
+        auch. Bei uns gibt es Polit-Fantasy aus Asthrien, Crime-Noir aus
+        deutschen Städten, Coming-of-Age aus dem Sommer, in dem alles gezählt
+        hat, MM Romance, die durch Dunkelheit erst ihren Wert bekommt, und
+        Selbstfürsorge ohne Coaching-Pose. Was uns nicht interessiert: Status,
+        Glanzgloben, gefälliges Honig-Happy-End. Was uns interessiert: das
+        Echte, manchmal Unschöne, immer Menschliche.
+      </p>
+      <p>
+        Wir arbeiten mit künstlicher Intelligenz als Werkzeug — nicht als
+        Ersatz, sondern als Schleifstein. Wir geben die Richtung, die Seele,
+        den Sinn; die KI hilft beim Handwerk. Heraus kommen Hefte, die im
+        Kindle Unlimited erscheinen, weil wir dort direkt bei unseren Lesern
+        sind, ohne Filter und ohne Vermittler. Wir schreiben sechs Tage die
+        Woche, sonntags ruht der Verlag. <em>Pasito a pasito</em>. Keine
+        Sprints, keine Hektik — ein Renten-Projekt, das wachsen darf.
+      </p>
+    </section>
+
+    <section class="fade-in">
+      <p class="eyebrow">Die Welten</p>
+      <h2>Zwölf Tore. Geh durch eines.</h2>
+      <div class="pen-grid">
+        {PENS.map(pen => (
+          <a class="pen-card" href={pen.url} target="_blank" rel="noopener">
+            <span class="pen-card-name">{pen.name}</span>
+            <span class="pen-card-werk">{pen.werk}</span>
+            <span class="pen-card-pitch">{pen.pitch}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <p class="eyebrow">Das Magazin</p>
+      <h2>Geschichten hinter den Geschichten.</h2>
+      <blockquote class="heft-card">
+        <span class="heft-meta">{MAGAZIN.name}</span>
+        {MAGAZIN.pitch}
+        <br /><br />
+        <a href={MAGAZIN.url} target="_blank" rel="noopener">→ legendenreich.com</a>
+        <span class="heft-status">In Vorbereitung</span>
+      </blockquote>
+    </section>
+
+    <section class="fade-in" id="newsletter">
+      <p class="eyebrow">Newsletter</p>
+      <h2>Bleib am Schreibtisch dran.</h2>
+      <p>
+        Kein Spam, keine fremden Verteiler. Eine Nachricht, wenn ein neues Heft
+        erscheint, ein neuer Pen vorgestellt wird oder das Magazin eine Ausgabe
+        herausbringt. Plus gelegentlich ein Blick hinter die Welten — wenn es
+        sich lohnt.
+      </p>
+      <div class="newsletter-frame">
+        <iframe
+          src={LISTMONK_FORM}
+          title="Newsletter-Anmeldung Fünfgroschenverlag"
+          height="380"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-claim">
+      <span class="signet">Fünfgroschenverlag</span> — Self-Publishing aus Überzeugung.
+      Geführt von einem Schreibtisch aus.
+    </p>
+    <p style="margin-top: 1.5rem; font-size: 0.78rem; color: var(--text-muted);">
+      <a href="/impressum">Impressum</a> ·
+      <a href="/datenschutz">Datenschutz</a> ·
+      <a href="/agb">AGB</a> ·
+      <a href="mailto:hermann@sinther.com">Kontakt</a>
+    </p>
+  </footer>
+</BaseLayout>
