@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const LISTMONK_FORM = 'https://listmonk.app.fuenfgroschenverlag.com/subscription/form?l=e972efa8-c6f1-4465-b7c6-84ece63b83ea';
+
+// Alphabetisch sortiert nach Pen-Name.
+// Pitches gespiegelt aus index.astro für Konsistenz.
+const PENS = [
+  {
+    name: 'Adrián María Soto',
+    werk: 'Soulmates · es',
+    pitch: 'MM Romance auf Spanisch — die internationale Stimme.',
+    url: 'https://adrianmariasoto.com',
+  },
+  {
+    name: 'Aron Falkenthal',
+    werk: 'Die Salzkönige',
+    pitch: 'Polit-Fantasy aus Asthrien — wo Salz mehr wert ist als Gold.',
+    url: 'https://aronfalkenthal.com',
+  },
+  {
+    name: 'Elias Morn',
+    werk: 'Die stillen Häuser',
+    pitch: 'Wo Wände Geschichten erzählen, die niemand hören wollte.',
+    url: 'https://eliasmorn.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'H. Sinther',
+    werk: 'Soulmates',
+    pitch: 'MM Romance über Seelen, die sich über Wiedergeburten finden.',
+    url: 'https://hsinther.com',
+  },
+  {
+    name: 'Jan Corven',
+    werk: 'Hier reden die Toten lauter',
+    pitch: 'Historisch-regionaler Crime-Noir aus deutschen Städten.',
+    url: 'https://jancorven.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Jaro Lindt',
+    werk: 'Der Sommer, der zählt',
+    pitch: 'Coming-of-Age und Folk-Horror — der Sommer, der alles veränderte.',
+    url: 'https://jarolindt.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Kai Verthen',
+    werk: 'Funkstille',
+    pitch: 'Wenn die Frequenzen schweigen, hört jemand trotzdem zu.',
+    url: 'https://kaiverthen.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Konrad Stein',
+    werk: 'Was übrig bleibt',
+    pitch: 'Stoische Lebenskunst für ein digitales Zeitalter.',
+    url: 'https://konradstein.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Mathias Kron',
+    werk: 'Die Maske der Normalität',
+    pitch: 'Psycho-Thriller, die unter der Oberfläche brennen.',
+    url: 'https://mathiaskron.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Raphael Kessler',
+    werk: 'Akten, die nie freigegeben wurden',
+    pitch: 'Conspiracy-Thriller mit echtem Aktengeruch.',
+    url: 'https://raphaelkessler.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Sebastian Frey',
+    werk: 'Dein mentales Update',
+    pitch: 'Mental Health und sanfte Selbstfürsorge.',
+    url: 'https://dein-mentales-update.com',
+  },
+  {
+    name: 'Tor der Welten',
+    werk: 'Imprint',
+    pitch: 'Tore in Welten, die es nicht geben sollte.',
+    url: 'https://torderwelten.de',
+  },
+];
+
+const MAGAZIN_WERKSTATT = [
+  {
+    name: 'Magazin Legendenreich',
+    pitch: 'Das Verlags-Magazin: Geschichten hinter den Geschichten, Welt-Bibel-Tiefen, Audio-Lesungen.',
+    url: 'https://legendenreich.com',
+  },
+  {
+    name: 'Werkstatt-Tisch',
+    pitch: 'Unsere Community auf Discourse — wo Leser:innen und Verlag am Tisch sitzen.',
+    url: 'https://tisch.fuenfgroschenverlag.com',
+  },
+  {
+    name: 'FünfGroschenWerkstatt · YouTube',
+    pitch: 'Wie wir Hefte bauen — KI als Werkzeug, nicht als Ersatz.',
+    url: 'https://www.youtube.com/@F%C3%BCnfGroschenWerkstatt',
+  },
+  {
+    name: 'Discord · Reader-Runde',
+    pitch: 'Der ruhige Raum für Leser:innen unserer Hefte — wie ein gut beleuchtetes Wohnzimmer am späten Abend.',
+    url: 'https://discord.gg/nFd8TyDAR',
+  },
+];
+
+const SOCIAL = [
+  {
+    name: 'Bluesky · Verlag',
+    pitch: 'Verlags-Notizen, Cover-Reveals, Werkstatt-Splitter.',
+    url: 'https://bsky.app/profile/fuenfgroschenverlag.com',
+  },
+  {
+    name: 'Bluesky · H. Sinther',
+    pitch: 'Sinthers Stimme: Romance, Wiedergeburten, Nacht-Gedanken.',
+    url: 'https://bsky.app/profile/hsinther.com',
+  },
+  {
+    name: 'Mastodon · Verlag',
+    pitch: 'Unser Mastodon-Heim auf wandering.shop — langsam und nah.',
+    url: 'https://wandering.shop/@fuenfgroschenverlag',
+  },
+];
+
+const NEWSLETTER = {
+  name: 'Newsletter — Eine Mail, wenn ein Heft erscheint',
+  pitch: 'Kein Spam, keine fremden Verteiler. Eine Nachricht bei neuem Heft, neuem Pen oder neuer Magazin-Ausgabe. Gelegentlich ein Blick hinter die Welten — wenn es sich lohnt.',
+  url: LISTMONK_FORM,
+};
+---
+<BaseLayout
+  title="Fünfgroschenverlag — Alle Links"
+  description="Die zentrale Adresse: zwölf Pen-Vitrinen, das Magazin, der Werkstatt-Tisch, der Werkstatt-Kanal, Social und der Newsletter."
+>
+  <header class="hero" style="min-height: auto; padding-top: var(--space-5); padding-bottom: var(--space-3);">
+    <div class="fade-in">
+      <p class="eyebrow">Alle Links</p>
+      <h1 style="font-size: clamp(2rem, 4.5vw, 3.4rem);">Zwölf Tore.<br />Ein Tisch.</h1>
+      <p class="tagline" style="margin-top: var(--space-2);">
+        Die zentrale Adresse für alles, was wir veröffentlichen.<br />
+        <a href="/" style="color: var(--text-muted);">← zurück zum Verlag</a>
+      </p>
+      <span class="ornament" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="fade-in">
+      <p class="eyebrow">Unsere Autoren</p>
+      <h2>Zwölf Pen-Vitrinen.</h2>
+      <div class="pen-grid">
+        {PENS.map(pen => (
+          <a class="pen-card" href={pen.url} target="_blank" rel="noopener">
+            <span class="pen-card-name">{pen.name}</span>
+            <span class="pen-card-werk">{pen.werk}</span>
+            <span class="pen-card-pitch">{pen.pitch}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <p class="eyebrow">Magazin & Werkstatt</p>
+      <h2>Der Raum hinter den Heften.</h2>
+      <div class="pen-grid">
+        {MAGAZIN_WERKSTATT.map(item => (
+          <a class="pen-card" href={item.url} target="_blank" rel="noopener">
+            <span class="pen-card-werk">{item.name}</span>
+            <span class="pen-card-pitch">{item.pitch}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <p class="eyebrow">Social</p>
+      <h2>Wo wir laut sind — leise.</h2>
+      <div class="pen-grid">
+        {SOCIAL.map(item => (
+          <a class="pen-card" href={item.url} target="_blank" rel="noopener">
+            <span class="pen-card-werk">{item.name}</span>
+            <span class="pen-card-pitch">{item.pitch}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <p class="eyebrow">Newsletter</p>
+      <h2>Wenn es etwas zu sagen gibt.</h2>
+      <a class="pen-card" href={NEWSLETTER.url} target="_blank" rel="noopener" style="max-width: 36rem; margin-inline: auto;">
+        <span class="pen-card-werk">{NEWSLETTER.name}</span>
+        <span class="pen-card-pitch">{NEWSLETTER.pitch}</span>
+      </a>
+    </section>
+
+    <section class="fade-in" style="text-align: center; padding-top: var(--space-3);">
+      <p class="eyebrow">Kontakt</p>
+      <p style="color: var(--text-secondary);">
+        <a href="mailto:hermann@sinther.com">hermann@sinther.com</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-claim">
+      <span class="signet">Fünfgroschenverlag</span> — Self-Publishing aus Überzeugung.
+      Geführt von einem Schreibtisch aus.
+    </p>
+    <p style="margin-top: 1.5rem; font-size: 0.78rem; color: var(--text-muted);">
+      <a href="/">Startseite</a> ·
+      <a href="/impressum">Impressum</a> ·
+      <a href="/datenschutz">Datenschutz</a> ·
+      <a href="/agb">AGB</a>
+    </p>
+  </footer>
+</BaseLayout>
